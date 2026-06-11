@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Jeevalaya Holistic Healing Centre"
+version = "1.0.0"
+id = "artifacts/jeevalaya"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20641
+
+[services.development]
+run = "pnpm --filter @workspace/jeevalaya run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/jeevalaya", "run", "build" ]
+publicDir = "artifacts/jeevalaya/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20641"
+BASE_PATH = "/"
