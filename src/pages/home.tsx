@@ -512,16 +512,7 @@ export default function Home() {
           className="relative z-10 text-center px-6 max-w-5xl mx-auto"
           style={{ opacity: heroOpacity }}
         >
-          <motion.img
-            src={mandalaSymbol}
-            alt="Lotus"
-            className="w-20 h-20 sm:w-28 sm:h-28 mx-auto mb-6"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 0.85, scale: 1 }}
-            viewport={{ once: true }}
-          />
+
 
           <motion.p
             className="font-serif text-[#d4a843] text-xl sm:text-2xl italic mb-3"
@@ -906,30 +897,27 @@ export default function Home() {
           {/* Syllabus modal removed per request */}
 
           {/* Learning Ladder + Uyir Ezhuchi Program */}
-          <section className="mt-20 bg-transparent relative overflow-hidden">
-            <div className="absolute inset-0 opacity-20 pointer-events-none">
-              <img src={mandalaSymbol} alt="decor" className="w-full h-full object-cover mix-blend-overlay" />
-            </div>
+          <section className="mt-24 bg-transparent relative overflow-hidden pt-4">
             <div className="max-w-5xl mx-auto text-center relative z-10">
               <h3 className="font-heading text-3xl text-white mb-4">The Jeevalaya Learning Ladder</h3>
-              <p className="text-white/60 mb-8">A progressive pathway from healing yourself to transforming others.</p>
+              <p className="text-white/60 mb-10">A progressive pathway from healing yourself to transforming others.</p>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-                <div className="bg-white/3 rounded-lg p-6">
-                  <h4 className="font-serif text-lg text-white mb-2">Level 1 → Heal Yourself</h4>
-                  <p className="text-white/60">Uyir Ezhuchi · Emotional Healing</p>
+                <div className="bg-white/[0.06] border border-white/10 rounded-xl p-7 hover:border-[#d4a843]/30 transition-all duration-300">
+                  <h4 className="font-serif text-lg text-white mb-3">Level 1 → Heal Yourself</h4>
+                  <p className="text-white/60 text-sm leading-relaxed">Uyir Ezhuchi · Emotional Healing</p>
                 </div>
-                <div className="bg-white/3 rounded-lg p-6">
-                  <h4 className="font-serif text-lg text-white mb-2">Level 2 → Master Yourself</h4>
-                  <p className="text-white/60">Psychology · NLP · Communication</p>
+                <div className="bg-white/[0.06] border border-white/10 rounded-xl p-7 hover:border-[#d4a843]/30 transition-all duration-300">
+                  <h4 className="font-serif text-lg text-white mb-3">Level 2 → Master Yourself</h4>
+                  <p className="text-white/60 text-sm leading-relaxed">Psychology · NLP · Communication</p>
                 </div>
-                <div className="bg-white/3 rounded-lg p-6">
-                  <h4 className="font-serif text-lg text-white mb-2">Level 3 → Lead Others</h4>
-                  <p className="text-white/60">Trainer Development · Parenting · Sacred Feminine Leadership</p>
+                <div className="bg-white/[0.06] border border-white/10 rounded-xl p-7 hover:border-[#d4a843]/30 transition-all duration-300">
+                  <h4 className="font-serif text-lg text-white mb-3">Level 3 → Lead Others</h4>
+                  <p className="text-white/60 text-sm leading-relaxed">Trainer Development · Parenting · Sacred Feminine Leadership</p>
                 </div>
-                <div className="bg-white/3 rounded-lg p-6">
-                  <h4 className="font-serif text-lg text-white mb-2">Level 4 → Transform Lives</h4>
-                  <p className="text-white/60">Jeevalaya Holistic Transformation Coach Certification</p>
+                <div className="bg-white/[0.06] border border-white/10 rounded-xl p-7 hover:border-[#d4a843]/30 transition-all duration-300">
+                  <h4 className="font-serif text-lg text-white mb-3">Level 4 → Transform Lives</h4>
+                  <p className="text-white/60 text-sm leading-relaxed">Jeevalaya Holistic Transformation Coach Certification</p>
                 </div>
               </div>
 
@@ -1087,7 +1075,71 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Faiths listing removed per request */}
+          {/* ── Healing Beyond Boundaries ── */}
+          <motion.div
+            className="max-w-4xl mx-auto bg-[#fdf3e7] rounded-2xl p-10 sm:p-14 text-center shadow-sm"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <p className="font-heading text-[#2a7c6f] text-xs tracking-[0.4em] uppercase mb-3">
+              Our Promise
+            </p>
+            <h2 className="font-heading text-4xl sm:text-5xl text-[#1a1a2e] mb-8">
+              Healing Beyond{" "}
+              <span className="text-[#2a7c6f] italic font-serif">Boundaries</span>
+            </h2>
+
+            {/* Faith Icons */}
+            <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mb-10">
+              {[
+                { symbol: "☪", label: "Islam" },
+                { symbol: "ॐ", label: "Hinduism" },
+                { symbol: "✝", label: "Christianity" },
+                { symbol: "☸", label: "Buddhism" },
+                { symbol: "☯", label: "Universal" },
+              ].map((faith, i) => (
+                <motion.div
+                  key={faith.label}
+                  className="flex flex-col items-center gap-2"
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, duration: 0.5, type: "spring" }}
+                  whileHover={{ scale: 1.15, rotate: 5 }}
+                >
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#9b59b6] to-[#8e44ad] flex items-center justify-center text-white text-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    {faith.symbol}
+                  </div>
+                  <span className="font-heading text-[10px] tracking-[0.25em] uppercase text-[#2a7c6f] font-medium">
+                    {faith.label}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Quote */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5, duration: 0.7 }}
+            >
+              <div className="w-20 h-px bg-gradient-to-r from-transparent via-[#d4a843] to-transparent mx-auto mb-8" />
+              <blockquote className="font-serif text-lg sm:text-xl md:text-2xl italic text-[#2d2d2d] leading-relaxed max-w-3xl mx-auto">
+                "Jeevalaya does not belong to one religion, one community, or one culture.
+                <br />
+                Like rain — we fall on{" "}
+                <span className="text-[#2a7c6f] font-semibold underline decoration-[#2a7c6f]/30 underline-offset-4">
+                  every roof, every heart, every soul
+                </span>
+                .
+                <br />
+                Your faith is your strength. We only add to it."
+              </blockquote>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -1444,9 +1496,22 @@ export default function Home() {
               Centre for Healing, Awakening, and Transformation. A sacred space where no soul is
               turned away.
             </p>
-            <p className="text-white/30 text-xs">
-              MSME / Udyam Registered: TN-28 0202858
-            </p>
+            <div className="inline-flex items-center gap-3.5 p-3.5 rounded-xl border border-[#d4a843]/20 bg-[#d4a843]/5 text-left max-w-sm hover:border-[#d4a843]/45 transition-all duration-300 shadow-sm backdrop-blur-sm">
+              <div className="p-2 rounded-lg bg-[#d4a843]/10 text-[#d4a843]">
+                <Shield className="w-5 h-5 fill-[#d4a843]/15" />
+              </div>
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#d4a843]">
+                  Govt. Approved
+                </p>
+                <h5 className="font-semibold text-xs text-white/90 mt-0.5">
+                  MSME / Udyam Registered
+                </h5>
+                <p className="text-[11px] font-mono text-white/40 mt-0.5">
+                  No: TN-28 0202858
+                </p>
+              </div>
+            </div>
           </div>
 
           <div>
